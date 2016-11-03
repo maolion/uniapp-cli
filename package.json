@@ -1,0 +1,34 @@
+{
+  "name": "qmox",
+  "version": "0.0.1",
+  "description": "一套用于 SPA 开发 和 Native APP 开发解决方案",
+  "main": "index.js",
+  "scripts": {
+    "debug": "./node_modules/.bin/tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maolion/qmox.git"
+  },
+  "keywords": [
+    "spa",
+    "react",
+    "react native",
+    "web",
+    "webpack"
+  ],
+  "author": "maolion.j@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maolion/qmox/issues"
+  },
+  "homepage": "https://github.com/maolion/qmox#readme",
+  "devDependencies": {
+    "typescript": "^2.1.0-dev.20161103"
+  },
+  "dependencies": {
+    "clime": "^0.4.3",
+    "villa": "^0.2.9"
+  }
+}
