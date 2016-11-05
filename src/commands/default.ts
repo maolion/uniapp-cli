@@ -23,9 +23,9 @@ export default class extends Command {
     execute(
         @param({
         })
-        subcommand: string
+        command: string
     ) {
-        if (!subcommand) {
+        if (!command) {
             return cli.getHelp();
         }
 
@@ -41,5 +41,9 @@ export const subcommands = [
     {
         name: 'init',
         brief: 'create a project based on qmox'
+    },
+    {
+        name: 'update',
+        brief: 'update qmox framework modules'
     }
 ];
