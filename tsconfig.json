@@ -12,6 +12,7 @@
         "sourceMap": false,
         "outDir": "./dist",
         "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
         "pretty": true,
         "listFiles": false
     },
