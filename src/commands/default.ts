@@ -40,10 +40,16 @@ export default class extends Command {
 export const subcommands = [
     {
         name: 'init',
-        brief: 'create a project based on qmox'
+        brief: 'Initialization a project based on qmox'
     },
     {
         name: 'update',
-        brief: 'update qmox framework modules'
+        alias: 'up',
+        brief: 'Update qmox framework modules'
+    },
+    {
+        name: 'list',
+        alias: 'ls',
+        brief: 'Output the frameworks of qmox supported'
     }
 ];
