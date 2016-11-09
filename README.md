@@ -34,7 +34,7 @@ USAGE
 
 COMMANDS
 
-  init        - Initialization a project based on qmox
+  init        - Initialization a project based on qmox framework
   update [up] - Update qmox framework modules
   list [ls]   - Output the frameworks of qmox supported
 ```

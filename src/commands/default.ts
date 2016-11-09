@@ -26,10 +26,10 @@ export default class extends Command {
         command: string
     ) {
         if (!command) {
-            return cli.getHelp();
+            return cli.getHelp(true);
         }
 
-        throw new UsageError('.....', {
+        throw new UsageError(`command not found: ${command}`, {
             getHelp() {
                 return cli.getHelp();
             }
@@ -40,7 +40,7 @@ export default class extends Command {
 export const subcommands = [
     {
         name: 'init',
-        brief: 'Initialization a project based on qmox'
+        brief: 'Initialization a project based on qmox framework'
     },
     {
         name: 'update',

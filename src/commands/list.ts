@@ -4,7 +4,7 @@ import {
     Command,
     buildTableOutput,
     TableRow,
-    TABLE_CAPTION_FLAG
+    TableCaption
 } from 'clime';
 import * as Chalk from 'chalk';
 
@@ -19,10 +19,9 @@ export default class extends Command {
         let qmoxConf = require(QMOX_CONF_PATH);
         let tableRows: TableRow[] = [];
 
-        tableRows.push([
-            TABLE_CAPTION_FLAG, 
+        tableRows.push(new TableCaption(
             Chalk.green('List of the qmox supported frameworks')
-        ]);
+        )); 
 
         for (let frameworkInfo of qmoxConf.frameworks || []) {
             tableRows.push([
