@@ -20,21 +20,24 @@ npm install qmox -g
 更多的的命令使用帮助可以使用 ```$ qmox --help``` 命令 获取更多帮助信息
 
 ```
- _______  __   __  _______  __   __
-|       ||  |_|  ||       ||  |_|  |
-|   _   ||       ||   _   ||       |
-|  | |  ||       ||  | |  ||       |
-|  |_|  ||       ||  |_|  | |     |
-|      | | ||_|| ||       ||   _   |
-|____||_||_|   |_||_______||__| |__|
+▶ bin/qmox
+   _______  __   __  _______  __   __ 
+  |       ||  |_|  ||       ||  |_|  |
+  |   _   ||       ||   _   ||       |
+  |  | |  ||       ||  | |  ||       |
+  |  |_|  ||       ||  |_|  | |     | 
+  |      | | ||_|| ||       ||   _   |
+  |____||_||_|   |_||_______||__| |__|                                          
+  
 
-USAGE
+  USAGE
 
-  qmox [command]
+    qmox [command]
 
-COMMANDS
+  COMMANDS
 
-  init        - Initialization a project based on qmox framework
-  update [up] - Update qmox framework modules
-  list [ls]   - Output the frameworks of qmox supported
+    init        - Initialization a project based on qmox framework
+    update [up] - Update qmox framework modules                   
+    list [ls]   - Output the frameworks of qmox supported         
+    version [v] - Output the qmox version                         
 ```
