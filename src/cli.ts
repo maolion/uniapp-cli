@@ -21,7 +21,7 @@ let roots = [
 if (FS.existsSync(LOCAL_QMOX_CONF_PATH)) {
     let qmoxConf = require(LOCAL_QMOX_CONF_PATH);
     let extendCommandsDir = qmoxConf.framework  && Path.join(LOCAL_NODE_MODULES, qmoxConf.framework, 'commands');
-
+    
     if (extendCommandsDir && FS.existsSync(extendCommandsDir)) {
         roots.push({
             title: `EXTEND COMMANDS - for based ${qmoxConf.framework} framework project`,

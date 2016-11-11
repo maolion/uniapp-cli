@@ -2,7 +2,9 @@ import {
     command,
     param,
     Command,
-    UsageError
+    UsageError,
+    HelpInfo,
+    Printable
 } from 'clime';
 
 import * as Chalk from 'chalk';
@@ -19,14 +21,14 @@ import cli from '../cli';
 |____||_||_|   |_||_______||__| |__|                                          
 `) 
 })
-export default class extends Command {
+export default class CommandEntry extends Command {
     execute(
         @param({
         })
         command: string
     ) {
         if (!command) {
-            return cli.getHelp(true);
+            return this.getHelp();
         }
 
         throw new UsageError(`command not found: ${command}`, {
@@ -34,6 +36,21 @@ export default class extends Command {
                 return cli.getHelp();
             }
         });
+    }
+
+    async getHelp(): Promise<Printable> {
+        let info = new HelpInfo();
+        let description = await cli.getHelpDescription();
+        let subcommandHelpInfo = await cli.getHelp(false);
+
+        info.buildDescription(description);
+        info.buildTextsForParamsAndOptions(CommandEntry);
+
+        return {
+            print: async (stdout, stderr) => {
+                stderr.write(`${info.text}\n${subcommandHelpInfo.text}\n`);
+            }
+        };
     }
 }
 
@@ -51,5 +68,10 @@ export const subcommands = [
         name: 'list',
         alias: 'ls',
         brief: 'Output the frameworks of qmox supported'
+    },
+    {
+        name: 'version',
+        alias: 'v',
+        brief: 'Output the qmox version'
     }
 ];

@@ -12,7 +12,8 @@ import * as Villa from 'villa';
 import { Spinner } from 'cli-spinner';
 
 import {
-    installNPMPackages
+    exec,
+    installPackagesFromNPM
 } from '../utils';
 
 import {
@@ -45,7 +46,7 @@ export default class InitCommand extends Command {
         })
         projectName: string
     ) {
-        let projectPath = Path.join(CWD, projectName)
+        let projectPath = Path.resolve(CWD, projectName)
 
         if (await safeStat(projectPath)) {
             throw `Directory '${projectName}' already exists.`;
@@ -54,7 +55,12 @@ export default class InitCommand extends Command {
         let form = await InitCommand._fillingForm();
         form.name = projectName;
 
-        this._init(projectPath, form);
+        try {
+            await this._init(projectPath, form);
+        } catch (e) {
+            await Villa.call(FS.remove, projectPath);
+            throw e;
+        }
     }
 
     private async _init(projectPath: string, form: FormResult) {
@@ -74,20 +80,22 @@ export default class InitCommand extends Command {
                 Path.join(projectPath, 'qmox-conf.json'),
                 InitCommand._generatorQmoxConfigContent(form)
             );
-
-            await installNPMPackages(projectPath, [
+            await installPackagesFromNPM(projectPath, [
                 'qmox-base@latest',
                 `${form.framework}@latest`,
                 'react@latest',
             ]);
-
-            process.stdout.write('\n');
-            console.log(Chalk.green('Initialization is complete!'));
+            
         } catch (e) {
             throw e;
         } finally {
-            spinner.stop();
+            spinner.stop(true);
         }
+
+        await exec('npm link qmox', { cwd: projectPath });
+
+        console.log(Chalk.green('\n=^_^= Initialization is complete!'));
+        
     }
 
     private static async _fillingForm(): Promise<FormResult> {
@@ -127,6 +135,9 @@ export default class InitCommand extends Command {
         let packageConfig = {
             name: form.name,
             version: '0.0.1',
+            description: '',
+            repository: '',
+            license: '',
             main: '',
             scripts: {},
             author: form.author,

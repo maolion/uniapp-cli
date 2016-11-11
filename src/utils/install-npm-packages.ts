@@ -1,4 +1,5 @@
 import { exec } from './exec';
+import * as Chalk from 'chalk';
 
 const DEPEND_TYPE_MAPPING: { [key: string]: string } = {
     normal: '--save',
@@ -6,9 +7,32 @@ const DEPEND_TYPE_MAPPING: { [key: string]: string } = {
     none: ''
 }
 
-export function installNPMPackages(cwd: string, packages: string[], dependType: string = 'normal') {
+export function installPackagesFromNPM(cwd: string, packages: string[], dependType: string = 'normal', showLog = false) {
+    let putedNewLine = false;
     return exec('npm install', {
         cwd,
-        args: [ packages.join(' '), DEPEND_TYPE_MAPPING[dependType] || '' ]
+        args: [ packages.join(' '), DEPEND_TYPE_MAPPING[dependType] || '' ],
+        log: data => {
+            if (!putedNewLine) {
+                process.stdout.write('\n');
+                putedNewLine = true;
+            }
+
+            if (showLog) {
+                process.stdout.write(data);
+            }
+        },
+        errLog: data => {
+            if (!putedNewLine) {
+                process.stdout.write('\n');
+                putedNewLine = true;
+            }
+            
+            if (data.indexOf('npm ERR! ') > -1) {
+                return process.stdout.write(Chalk.red(data));
+            } else {
+                return process.stdout.write(Chalk.yellow(data));
+            }
+        }
     });
 }
