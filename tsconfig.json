@@ -9,7 +9,7 @@
         "noEmitOnError": false,
         "preserveConstEnums": true,
         "noLib": false,
-        "sourceMap": false,
+        "sourceMap": true,
         "outDir": "./dist",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
