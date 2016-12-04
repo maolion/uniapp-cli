@@ -18,7 +18,7 @@ import cli from '../cli';
 |  | |  ||       ||  | |  ||       |
 |  |_|  ||       ||  |_|  | |     | 
 |      | | ||_|| ||       ||   _   |
-|____||_||_|   |_||_______||__| |__|                                          
+|____||_||_|   |_||_______||__| |__|
 `) 
 })
 export default class CommandEntry extends Command {
@@ -75,3 +75,11 @@ export const subcommands = [
         brief: 'Output the qmox version'
     }
 ];
+
+/*
+
+┌────────────────────────────────────────────┐
+│ Update available: 1.11.0 (current: 1.10.2) │
+│ Run npm install -g qmox to update.         │
+└────────────────────────────────────────────┘
+*/
