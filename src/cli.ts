@@ -4,32 +4,32 @@ import { CLI, Shim } from 'clime';
 
 import {
     CWD,
-    QMOX_CONF_PATH,
-    QMOX_COMMANDS_ROOT,
+    UNIAPP_CONF_PATH,
+    UNIAPP_COMMANDS_ROOT,
 
     LOCAL_NODE_MODULES,
-    LOCAL_QMOX_CONF_PATH
+    LOCAL_UNIAPP_CONF_PATH
 } from './constants';
 
 let roots = [
     {
         title: 'COMMANDS',
-        dir: QMOX_COMMANDS_ROOT
+        dir: UNIAPP_COMMANDS_ROOT
     }
 ];
 
-if (FS.existsSync(LOCAL_QMOX_CONF_PATH)) {
-    let qmoxConf = require(LOCAL_QMOX_CONF_PATH);
-    let extendCommandsDir = qmoxConf.framework  && Path.join(LOCAL_NODE_MODULES, qmoxConf.framework, 'commands');
+if (FS.existsSync(LOCAL_UNIAPP_CONF_PATH)) {
+    let uniappConf = require(LOCAL_UNIAPP_CONF_PATH);
+    let extendCommandsDir = uniappConf.framework  && Path.join(LOCAL_NODE_MODULES, uniappConf.framework, 'commands');
     
     if (extendCommandsDir && FS.existsSync(extendCommandsDir)) {
         roots.push({
-            title: `EXTEND COMMANDS - for based ${qmoxConf.framework} framework project`,
+            title: `EXTEND COMMANDS - for based ${uniappConf.framework} framework project`,
             dir: extendCommandsDir
         });
     }
 }
 
-let cli = new CLI('qmox', roots);
+let cli = new CLI('uniapp', roots);
 
 export default cli;

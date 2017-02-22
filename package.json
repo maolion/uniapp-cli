@@ -1,5 +1,5 @@
 {
-  "name": "qmox-cli",
+  "name": "uniapp-cli",
   "version": "0.1.0-dev.1",
   "description": "一套用于 SPA 开发 和 Native APP 开发解决方案 基于 typescript, react, react-native, redux",
   "main": "dist/cli.js",
@@ -10,15 +10,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "qmox": "./bin/qmox"
+    "uniapp": "./bin/uniapp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maolion/qmox-cli.git"
+    "url": "git+https://github.com/maolion/uniapp-cli.git"
   },
   "keywords": [
-    "qmox",
-    "qmox-cli",
+    "uniapp",
+    "uniapp-cli",
     "spa",
     "react",
     "react native",
@@ -28,9 +28,9 @@
   "author": "maolion.j@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maolion/qmox-cli/issues"
+    "url": "https://github.com/maolion/uniapp-cli/issues"
   },
-  "homepage": "https://github.com/maolion/qmox-cli#readme",
+  "homepage": "https://github.com/maolion/uniapp-cli#readme",
   "devDependencies": {
     "@types/chalk": "^0.4.31",
     "@types/fs-extra": "0.0.34",

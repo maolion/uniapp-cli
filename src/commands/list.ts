@@ -8,7 +8,7 @@ import {
 } from 'clime';
 import * as Chalk from 'chalk';
 
-import { QMOX_CONF_PATH } from '../constants';
+import { UNIAPP_CONF_PATH } from '../constants';
 
 @command({
     brief: 'Output the frameworks of qmox supported'
@@ -16,7 +16,7 @@ import { QMOX_CONF_PATH } from '../constants';
 export default class extends Command {
     @metadata
     execute() {
-        let qmoxConf = require(QMOX_CONF_PATH);
+        let qmoxConf = require(UNIAPP_CONF_PATH);
         let tableRows: TableRow[] = [];
 
         tableRows.push(new TableCaption(

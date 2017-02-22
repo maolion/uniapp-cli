@@ -18,8 +18,8 @@ import {
 
 import {
     CWD,
-    QMOX_CONF_PATH,
-    LOCAL_QMOX_CONF_PATH
+    UNIAPP_CONF_PATH,
+    LOCAL_UNIAPP_CONF_PATH
 } from '../constants';
 
 interface FormResult {
@@ -81,7 +81,7 @@ export default class InitCommand extends Command {
                 InitCommand._generatorQmoxConfigContent(form)
             );
             await installPackagesFromNPM(projectPath, [
-                'qmox-base@latest',
+                'qmox@latest',
                 `${form.framework}@latest`,
                 'react@latest',
             ]);
@@ -127,7 +127,7 @@ export default class InitCommand extends Command {
     }
 
     private static _getSupportedFrameworks(): FrameworkInfo[] {
-        let qmoxConf = require(QMOX_CONF_PATH);
+        let qmoxConf = require(UNIAPP_CONF_PATH);
         return qmoxConf.frameworks || [];
     }
 
