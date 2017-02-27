@@ -11,7 +11,7 @@ import * as Chalk from 'chalk';
 import { UNIAPP_CONF_PATH } from '../constants';
 
 @command({
-    brief: 'Output the frameworks of qmox supported'
+    brief: '输出 uniapp 已支持的模块列表'
 })
 export default class extends Command {
     @metadata
@@ -20,7 +20,7 @@ export default class extends Command {
         let tableRows: TableRow[] = [];
 
         tableRows.push(new TableCaption(
-            Chalk.green('List of the qmox supported frameworks')
+            Chalk.green('uniapp 提供的框架模块列表')
         )); 
 
         for (let frameworkInfo of qmoxConf.frameworks || []) {
