@@ -1,10 +1,4 @@
-# 一套用于 SPA 开发 和 Native APP 开发解决方案
-
-### 版本更新提示
-
-还没有任何版本发布
-
----
+# 一套用于 WEB APP 开发 和 Native APP 开发的解决方案 基于 TypeScript, React, React Native
 
 ### 安装
 
