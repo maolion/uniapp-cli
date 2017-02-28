@@ -1,4 +1,4 @@
-# 一套用于 WEB APP 开发 和 Native APP 开发的解决方案
+# 一套用于 WEB APP 开发 和 Mobile APP 开发的解决方案
 
 ### 安装
 
