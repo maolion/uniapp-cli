@@ -35,7 +35,7 @@ export interface FrameworkInfo {
 }
 
 @command({
-    brief: 'Initialization a project based on qmox framework'
+    brief: 'Create and initialize a new project'
 })
 export default class InitCommand extends Command {
     async execute(
@@ -77,11 +77,11 @@ export default class InitCommand extends Command {
                 InitCommand._generatorPackageConfigContent(form)
             );
             await Villa.call(FS.writeFile, 
-                Path.join(projectPath, 'qmox-conf.json'),
-                InitCommand._generatorQmoxConfigContent(form)
+                Path.join(projectPath, 'uniapp-conf.json'),
+                InitCommand._generatorUniappConfigContent(form)
             );
             await installPackagesFromNPM(projectPath, [
-                'qmox@latest',
+                'uniapp@latest',
                 `${form.framework}@latest`,
                 'react@latest',
             ]);
@@ -91,8 +91,6 @@ export default class InitCommand extends Command {
         } finally {
             spinner.stop(true);
         }
-
-        await exec('npm link qmox', { cwd: projectPath });
 
         console.log(Chalk.green('\n=^_^= Initialization is complete!'));
         
@@ -127,8 +125,8 @@ export default class InitCommand extends Command {
     }
 
     private static _getSupportedFrameworks(): FrameworkInfo[] {
-        let qmoxConf = require(UNIAPP_CONF_PATH);
-        return qmoxConf.frameworks || [];
+        let uniappConf = require(UNIAPP_CONF_PATH);
+        return uniappConf.frameworks || [];
     }
 
     private static _generatorPackageConfigContent(form: FormResult) {
@@ -148,11 +146,11 @@ export default class InitCommand extends Command {
         return JSON.stringify(packageConfig, null, '  ');
     }
 
-    private static _generatorQmoxConfigContent(form: FormResult) {
-        let qmoxConfig = {
+    private static _generatorUniappConfigContent(form: FormResult) {
+        let uniappConfig = {
             framework: form.framework
         };
 
-        return JSON.stringify(qmoxConfig, null, '  ');
+        return JSON.stringify(uniappConfig, null, '  ');
     }
 }

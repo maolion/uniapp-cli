@@ -6,14 +6,14 @@ import {
     Command,
 } from 'clime';
 
-import { QMOX_DIR } from '../constants';
+import { UNIAPP_DIR } from '../constants';
 
 @command({
-    brief: 'Output the qmox version'
+    brief: 'Output uniapp/frameworks version'
 })
 export default class extends Command {
     @metadata
     execute() {
-        return require(Path.join(QMOX_DIR, 'package.json')).version;
+        return require(Path.join(UNIAPP_DIR, 'package.json')).version;
     }
 }

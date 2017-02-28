@@ -62,22 +62,22 @@ export default class CommandEntry extends Command {
 export const subcommands = [
     {
         name: 'init',
-        brief: '创建/初始一个新的项目'
+        brief: 'Create and initialize a new project'
     },
     {
         name: 'update',
         alias: 'up',
-        brief: '更新项目模块依赖'
+        brief: 'Upgrade the framework'
     },
     {
         name: 'list',
         alias: 'ls',
-        brief: '输出 uniapp 已支持的模块列表'
+        brief: 'Output list of supported frameworks'
     },
     {
         name: 'version',
         alias: 'v',
-        brief: '输出当前 uniapp 版本号'
+        brief: 'Output uniapp/frameworks version'
     }
 ];
 
@@ -85,6 +85,6 @@ export const subcommands = [
 
 ┌────────────────────────────────────────────┐
 │ Update available: 1.11.0 (current: 1.10.2) │
-│ Run npm install -g qmox to update.         │
+│ Run npm install -g uniapp-cli to update.   │
 └────────────────────────────────────────────┘
 */
