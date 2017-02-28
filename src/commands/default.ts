@@ -33,7 +33,7 @@ export default class CommandEntry extends Command {
         command: string
     ) {
         if (!command) {
-            return this.getHelp();
+            return CommandEntry.getHelp(true);
         }
 
         throw new UsageError(`command not found: ${command}`, {
@@ -43,14 +43,18 @@ export default class CommandEntry extends Command {
         });
     }
 
-    async getHelp(): Promise<Printable> {
+    static async getHelp(printHeadingDescription: boolean = false): Promise<Printable> {
         let info = new HelpInfo();
-        let description = await cli.getHelpDescription();
+        let description: string | undefined;
         let subcommandHelpInfo = await cli.getHelp(false);
+
+        if (printHeadingDescription) {
+            description = await cli.getHelpDescription();
+        }
 
         info.buildDescription(description);
         info.buildTextsForParamsAndOptions(CommandEntry);
-
+        
         return {
             print: async (stdout, stderr) => {
                 stderr.write(`${info.text}\n${subcommandHelpInfo.text}\n`);
