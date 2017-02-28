@@ -1,7 +1,7 @@
 {
   "name": "uniapp-cli",
   "version": "0.1.0-dev.1",
-  "description": "一套用于 SPA 开发 和 Native APP 开发解决方案 基于 typescript, react, react-native, redux",
+  "description": "一套用于 WEB APP 开发 和 Native APP 开发的解决方案 基于 typescript, react, react-native",
   "main": "dist/cli.js",
   "scripts": {
     "start": "tsc -v && tsc --watch",
