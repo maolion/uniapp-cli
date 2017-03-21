@@ -1,3 +1,4 @@
+import "source-map-support/register";
 import * as FS from 'fs';
 import * as Path from 'path';
 import { CLI, Shim } from 'clime';
@@ -13,8 +14,8 @@ import {
 
 let roots = [
     {
-        title: 'COMMANDS',
-        dir: UNIAPP_COMMANDS_ROOT
+        label: 'SUBCOMMANDS',
+        path: UNIAPP_COMMANDS_ROOT
     }
 ];
 
@@ -24,8 +25,8 @@ if (FS.existsSync(LOCAL_UNIAPP_CONF_PATH)) {
     
     if (extendCommandsDir && FS.existsSync(extendCommandsDir)) {
         roots.push({
-            title: `EXTEND COMMANDS - for based ${uniappConf.framework} framework project`,
-            dir: extendCommandsDir
+            label: `EXTEND SUBCOMMANDS - for based ${uniappConf.framework} framework project`,
+            path: extendCommandsDir
         });
     }
 }

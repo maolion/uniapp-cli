@@ -4,8 +4,9 @@ import {
     command,
     Command,
     param,
-    safeStat
 } from 'clime';
+import { safeStat } from '../utils';
+
 import * as Inquirer from 'inquirer';
 import * as Chalk from 'chalk';
 import * as Villa from 'villa';

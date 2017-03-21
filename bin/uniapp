@@ -1,5 +1,4 @@
 #!/usr/bin/env node
 var Shim = require('clime').Shim;
-var cli = require('../dist/cli.js').default;
-
+var cli = require('../cli.js').default;
 new Shim(cli).execute(process.argv);

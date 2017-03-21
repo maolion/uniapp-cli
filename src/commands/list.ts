@@ -1,12 +1,15 @@
 import {
     command,
     metadata,
-    Command,
-    buildTableOutput,
-    TableRow,
-    TableCaption
+    Command
 } from 'clime';
 import * as Chalk from 'chalk';
+
+import {
+    TableCaption,
+    TableRow,
+    buildTableOutput
+} from '../utils/format';
 
 import { UNIAPP_CONF_PATH } from '../constants';
 
@@ -16,14 +19,14 @@ import { UNIAPP_CONF_PATH } from '../constants';
 export default class extends Command {
     @metadata
     execute() {
-        let qmoxConf = require(UNIAPP_CONF_PATH);
+        let uniappConf = require(UNIAPP_CONF_PATH);
         let tableRows: TableRow[] = [];
 
         tableRows.push(new TableCaption(
             Chalk.green('list of supported frameworks')
         )); 
 
-        for (let frameworkInfo of qmoxConf.frameworks || []) {
+        for (let frameworkInfo of uniappConf.frameworks || []) {
             tableRows.push([
                 Chalk.bold(frameworkInfo.name),
                 frameworkInfo.description
