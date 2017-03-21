@@ -2,7 +2,6 @@
 
 echo "npm linking ..."
 
-ln -fs ../node_modules ./dist
 cp -fr ./bin/ ./dist/bin/
 cp -f ./uniapp-conf.json ./dist
 cp -f ./package.json ./dist
