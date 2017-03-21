@@ -5,7 +5,6 @@ import {
     Command,
     param,
 } from 'clime';
-import { safeStat } from '../utils';
 
 import * as Inquirer from 'inquirer';
 import * as Chalk from 'chalk';
@@ -13,9 +12,10 @@ import * as Villa from 'villa';
 import { Spinner } from 'cli-spinner';
 
 import {
+    safeStat,
     exec,
     installPackagesFromNPM
-} from '../utils';
+} from '../util';
 
 import {
     CWD,

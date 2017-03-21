@@ -9,7 +9,7 @@ import {
     TableCaption,
     TableRow,
     buildTableOutput
-} from '../utils/format';
+} from '../util/format';
 
 import { UNIAPP_CONF_PATH } from '../constants';
 
