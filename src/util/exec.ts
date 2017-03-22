@@ -38,7 +38,7 @@ export function exec(execute: string, options: ExecuteOptions = {}) {
 
         if (errLog) {
             instance.stderr.on('data', function(data: Buffer) {
-                errLog(data.toString("utf8"));
+                errLog && errLog(data.toString("utf8"));
             });
         }
 

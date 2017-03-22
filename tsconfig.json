@@ -5,6 +5,7 @@
         "moduleResolution": "node",
         "declaration": false,
         "noImplicitAny": true,
+        "strictNullChecks": true,
         "removeComments": true,
         "noEmitOnError": false,
         "preserveConstEnums": true,
