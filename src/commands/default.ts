@@ -1,10 +1,10 @@
 import {
-    command,
-    param,
-    Command,
-    UsageError,
-    HelpInfo,
-    Printable
+  Command,
+  HelpInfo,
+  Printable,
+  UsageError,
+  command,
+  param
 } from 'clime';
 
 import * as Chalk from 'chalk';
@@ -26,25 +26,25 @@ export const description = Chalk.grey(`\
 `);
 
 export const subcommands = [
-    {
-        name: 'init',
-        brief: 'Create and initialize a new project'
-    },
-    {
-        name: 'update',
-        alias: 'up',
-        brief: 'Upgrade the framework'
-    },
-    {
-        name: 'list',
-        alias: 'ls',
-        brief: 'Output list of supported frameworks'
-    },
-    {
-        name: 'version',
-        alias: 'v',
-        brief: 'Output uniapp/frameworks version'
-    }
+  {
+    name: 'init',
+    brief: 'Create and initialize a new project'
+  },
+  {
+    name: 'update',
+    alias: 'up',
+    brief: 'Upgrade the framework'
+  },
+  {
+    name: 'list',
+    alias: 'ls',
+    brief: 'Output list of supported frameworks'
+  },
+  {
+    name: 'version',
+    alias: 'v',
+    brief: 'Output uniapp/frameworks version'
+  }
 ];
 
 /*
