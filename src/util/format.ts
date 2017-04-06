@@ -44,7 +44,7 @@ export function buildTableOutput(rows: TableRow[], {
 
     return rows
         .map(row => {
-            
+
             if (row instanceof TableCaption) {
                 return row.text + '\n';
             }

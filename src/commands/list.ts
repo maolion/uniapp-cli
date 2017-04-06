@@ -24,7 +24,7 @@ export default class extends Command {
 
         tableRows.push(new TableCaption(
             Chalk.green('list of supported frameworks')
-        )); 
+        ));
 
         for (let frameworkInfo of uniappConf.frameworks || []) {
             tableRows.push([

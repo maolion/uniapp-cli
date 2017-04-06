@@ -27,7 +27,7 @@ export function installPackagesFromNPM(cwd: string, packages: string[], dependTy
                 process.stdout.write('\n');
                 putedNewLine = true;
             }
-            
+
             if (data.indexOf('npm ERR! ') > -1) {
                 return process.stdout.write(Chalk.red(data));
             } else {

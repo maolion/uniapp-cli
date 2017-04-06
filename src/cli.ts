@@ -22,7 +22,7 @@ let roots = [
 if (FS.existsSync(LOCAL_UNIAPP_CONF_PATH)) {
     let uniappConf = require(LOCAL_UNIAPP_CONF_PATH);
     let extendCommandsDir = uniappConf.framework  && Path.join(LOCAL_NODE_MODULES, uniappConf.framework, 'commands');
-    
+
     if (extendCommandsDir && FS.existsSync(extendCommandsDir)) {
         roots.push({
             label: `EXTEND SUBCOMMANDS - for based ${uniappConf.framework} framework project`,

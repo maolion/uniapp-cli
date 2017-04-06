@@ -14,15 +14,15 @@ export function exec(execute: string, options: ExecuteOptions = {}) {
     let log = options.log;
     let errLog = options.errLog;
     let cache = '';
-    
+
     return new Promise((resolve, reject) => {
         let instance = ChildProcess.exec(
-            execute + (options.args ?  ' ' + options.args.join(" ") : ""), 
+            execute + (options.args ?  ' ' + options.args.join(" ") : ""),
             {
                 cwd: options.cwd || process.cwd()
             },
             function(err) {
-                
+
             }
         );
 
@@ -30,7 +30,7 @@ export function exec(execute: string, options: ExecuteOptions = {}) {
             let dataContent = data.toString("utf8");
 
             if (options.catchOutput) {
-                cache += dataContent; 
+                cache += dataContent;
             }
 
             log && log(dataContent);

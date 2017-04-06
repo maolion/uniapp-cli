@@ -73,11 +73,11 @@ export default class InitCommand extends Command {
             console.log(`Creating a new ${Chalk.bold(form.framework)} project in ${Chalk.bold(projectPath)}`);
 
             await Villa.call(FS.ensureDir, projectPath);
-            await Villa.call(FS.writeFile, 
+            await Villa.call(FS.writeFile,
                 Path.join(projectPath, 'package.json'),
                 InitCommand._generatorPackageConfigContent(form)
             );
-            await Villa.call(FS.writeFile, 
+            await Villa.call(FS.writeFile,
                 Path.join(projectPath, 'uniapp-conf.json'),
                 InitCommand._generatorUniappConfigContent(form)
             );
@@ -86,7 +86,7 @@ export default class InitCommand extends Command {
                 `${form.framework}@latest`,
                 'react@latest',
             ]);
-            
+
         } catch (e) {
             throw e;
         } finally {
@@ -94,7 +94,7 @@ export default class InitCommand extends Command {
         }
 
         console.log(Chalk.green('\n=^_^= Initialization is complete!'));
-        
+
     }
 
     private static async _fillingForm(): Promise<FormResult> {
