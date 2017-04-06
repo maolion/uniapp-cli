@@ -12,9 +12,10 @@ echo "copying ..."
 
 cp ./uniapp-conf.json ./dist/uniapp-conf.json
 cp ./package.json ./dist/package.json
+cp ./._npmignore ./dist/.npmignor
 cp -r ./bin ./dist/bin
 
-perl -pi -w -e 's/"prepublish": "exit 1"/"prepublish": ""/g;' ./dist/package.json
+perl -pi -w -e 's/"prepublishOnly": "exit 1"/"prepublishOnly": ""/g;' ./dist/package.json
 
 cd ./dist
 
