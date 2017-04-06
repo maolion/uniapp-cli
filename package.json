@@ -6,7 +6,8 @@
   "typings": "./cli.d.ts",
   "scripts": {
     "start": "tsc --watch",
-    "lint": "tslint src/**/*.ts -c tslint.json",
+    "tslint": "tslint",
+    "lint": "tslint --project tsconfig.json --type-check -c tslint.json",
     "build": "npm run lint && tsc --declaration",
     "link": "npm run build && ./scripts/npm-link.sh",
     "unlink": "cd dist && npm unlink",

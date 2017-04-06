@@ -1,6 +1,9 @@
 {
   "extends": "vts",
   "rules": {
+    "prefer-template": false,
+    "prefer-const": false,
+    "no-require-imports": false,
     "no-var-requires": false,
     "trailing-comma": [ false ],
     "variable-name": [
