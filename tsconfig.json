@@ -1,27 +1,27 @@
 {
-    "compilerOptions": {
-        "target": "es2015",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "declaration": false,
-        "strictNullChecks": true,
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "removeComments": true,
-        "skipDefaultLibCheck": true,
-        "noEmitOnError": false,
-        "preserveConstEnums": true,
-        "noLib": false,
-        "sourceMap": true,
-        "outDir": "./dist",
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "pretty": true,
-        "listFiles": false
-    },
-    "include": [
-        "./typings/**/*",
-        "./src/**/*"
-    ]
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": false,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "skipDefaultLibCheck": true,
+    "noEmitOnError": false,
+    "preserveConstEnums": true,
+    "noLib": false,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "pretty": true,
+    "listFiles": false
+  },
+  "include": [
+    "./typings/**/*",
+    "./src/**/*"
+  ]
 }
