@@ -1,6 +1,7 @@
 {
   "extends": "vts",
   "rules": {
+    "no-bitwise": false,
     "prefer-template": false,
     "prefer-const": false,
     "no-require-imports": false,
