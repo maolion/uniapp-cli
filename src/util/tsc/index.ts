@@ -29,7 +29,12 @@ import {
 import { readFile } from '../fs';
 
 import {
-  getRelativePath
+  arrayIsEqualTo,
+  contains,
+  getRelativePath,
+  isSupportedSourceFileName,
+  padLeft,
+  padRight
 } from './helper';
 
 import transformPathMapping from './transform-path-mapping';
@@ -492,69 +497,4 @@ function reportWatchDiagnostic(diagnostic: Diagnostic) {
       + NL);
 
   sys.write(output);
-}
-
-// Helpers
-
-function contains<T>(array: T[], value: T): boolean {
-  if (array) {
-    for (const v of array) {
-      if (v === value) {
-        return true;
-      }
-    }
-  }
-  return false;
-}
-
-function arrayIsEqualTo<T>(array1: T[], array2: T[], equaler?: (a: T, b: T) => boolean): boolean {
-  if (!array1 || !array2) {
-    return false;
-  }
-
-  if (array1.length !== array2.length) {
-    return false;
-  }
-
-  for (let i = 0, l = array1.length; i < l; i++) {
-    let a = array1[i];
-    let b = array2[i];
-
-    if (!(equaler ? equaler(a, b) : a === b)) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-function isSupportedSourceFileName(fileName: string) {
-  if (!fileName) {
-    return false;
-  }
-
-  let fileNameStrLen = fileName.length;
-
-  for (let extension of supportedTypeScriptExtensions) {
-    if (fileNameStrLen > extension.length && fileName.endsWith(extension)) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function padLeft(s: string, length: number) {
-  while (s.length < length) {
-    s = ' ' + s;
-  }
-  return s;
-}
-
-function padRight(s: string, length: number) {
-  while (s.length < length) {
-    s = s + ' ';
-  }
-
-  return s;
 }
