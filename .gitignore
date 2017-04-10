@@ -4,3 +4,4 @@ dist
 typings/*
 !typings/extends/
 uniapp-conf.json
+demo/
