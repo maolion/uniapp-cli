@@ -37,6 +37,9 @@
     "url": "https://github.com/maolion/uniapp-cli/issues"
   },
   "homepage": "https://github.com/maolion/uniapp-cli#readme",
+  "peerDependencies": {
+    "typescript": ">=2.3.0-dev"
+  },
   "devDependencies": {
     "@types/chalk": "^0.4.31",
     "@types/fs-extra": "^2.0.0",
