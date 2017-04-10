@@ -7,6 +7,8 @@
     "no-require-imports": false,
     "no-var-requires": false,
     "trailing-comma": [ false ],
+    "return-undefined": false,
+    "no-unbound-method": false,
     "variable-name": [
       true,
       "ban-keywords",
