@@ -43,7 +43,7 @@
     "@types/inquirer": "0.0.32",
     "@types/node": "^7.0.12",
     "tslint": "^5.0.0",
-    "typescript": "^2.2.2",
+    "typescript": "^2.3.0-dev.20170407",
     "vts": "^5.0.1"
   },
   "dependencies": {

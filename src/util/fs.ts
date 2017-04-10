@@ -43,3 +43,7 @@ export async function findPaths(type: PathType, roots: string[], relPath?: strin
 
   return paths.length ? paths : undefined;
 }
+
+export function readFile(fileName: string, encoding?: string) {
+  return FS.readFileSync(fileName, encoding).toString('utf8');
+}
